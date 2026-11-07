@@ -1,0 +1,13 @@
+<h1>Furrever</h1>
+
+<!-- These rows come from Postgres, via the ASP.NET backend. -->
+<ul>
+  @for (pet of pets(); track pet.id) {
+    <li>{{ pet.name }} &mdash; {{ pet.species }}</li>
+  } @empty {
+    <li>No pets yet (is the backend running?)</li>
+  }
+</ul>
+
+<!-- Pages registered in app.routes.ts will render here. -->
+<router-outlet />
