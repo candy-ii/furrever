@@ -1,0 +1,13 @@
+@Backend_HostAddress = http://localhost:5037
+
+GET {{Backend_HostAddress}}/api/pets
+Accept: application/json
+
+###
+
+POST {{Backend_HostAddress}}/api/pets
+Content-Type: application/json
+
+{ "name": "Pickle", "species": "Rabbit" }
+
+###

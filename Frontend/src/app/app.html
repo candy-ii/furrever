@@ -1,0 +1,19 @@
+<nav class="top-nav">
+  <a routerLink="/" class="logo">🐾 Furrever</a>
+  <div class="nav-links">
+    <a routerLink="/blog">Blog</a>
+    <a routerLink="/admin/blog/new">+ New Post</a>
+  </div>
+</nav>
+
+<!-- These rows come from Postgres, via the ASP.NET backend. -->
+<ul>
+  @for (pet of pets(); track pet.id) {
+    <li>{{ pet.name }} &mdash; {{ pet.species }}</li>
+  } @empty {
+    <li>No pets yet (is the backend running?)</li>
+  }
+</ul>
+
+<!-- Pages registered in app.routes.ts will render here. -->
+<router-outlet />

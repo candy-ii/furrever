@@ -1,0 +1,28 @@
+@if (post(); as p) {
+  <div class="blog-detail">
+    <a routerLink="/blog" class="back-link">← Back to Blog</a>
+
+    <article>
+      <h1>{{ p.title }}</h1>
+      <div class="meta">
+        <span class="author">By {{ p.authorName }}</span>
+        <span class="date">{{ p.createdAt | date:'fullDate' }}</span>
+      </div>
+
+      <div class="content" [innerHTML]="p.content"></div>
+
+      <div class="actions">
+        <button class="btn btn-like" (click)="toggleLike()">
+          {{ liked() ? '❤️' : '🤍' }} {{ p.reactionCount }} Like{{ p.reactionCount === 1 ? '' : 's' }}
+        </button>
+
+        <div class="admin-actions">
+          <a [routerLink]="['/admin/blog/edit', p.id]" class="btn btn-edit">✏️ Edit</a>
+          <button class="btn btn-delete" (click)="deletePost()">🗑️ Delete</button>
+        </div>
+      </div>
+    </article>
+  </div>
+} @else {
+  <p class="loading">Loading…</p>
+}

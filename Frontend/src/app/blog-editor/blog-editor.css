@@ -1,0 +1,148 @@
+.editor-page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #6d4aff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.editor-header h1 {
+  margin-bottom: 1.5rem;
+}
+
+.editor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.form-group input {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #6d4aff;
+  box-shadow: 0 0 0 3px rgba(109, 74, 255, 0.12);
+}
+
+/* ─── Rich text toolbar ──────────────────────────────────────────── */
+
+.toolbar {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.4rem;
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+}
+
+.toolbar button {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.toolbar button:hover {
+  background: #e8e0ff;
+  border-color: #d0c0ff;
+}
+
+.toolbar .divider {
+  width: 1px;
+  background: #ddd;
+  margin: 0 0.25rem;
+}
+
+/* ─── Contenteditable editor ─────────────────────────────────────── */
+
+.rich-editor {
+  min-height: 280px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0 0 6px 6px;
+  font-size: 1rem;
+  line-height: 1.7;
+  outline: none;
+  background: #fff;
+}
+
+.rich-editor:focus {
+  border-color: #6d4aff;
+  box-shadow: 0 0 0 3px rgba(109, 74, 255, 0.12);
+}
+
+.rich-editor:empty::before {
+  content: attr(data-placeholder);
+  color: #bbb;
+  pointer-events: none;
+}
+
+/* ─── Actions ────────────────────────────────────────────────────── */
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  background: #6d4aff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #5a3ad9;
+}
+
+.btn-primary:disabled {
+  background: #b8a5ff;
+  cursor: not-allowed;
+}
+
+.btn-cancel {
+  background: #f0f0f0;
+  color: #555;
+  border: 1px solid #ddd;
+}
+
+.btn-cancel:hover {
+  background: #e4e4e4;
+}
